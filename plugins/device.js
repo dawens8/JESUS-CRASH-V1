@@ -1,3 +1,55 @@
 // crypte by god dawens haitien creole🇭🇹
 
-eval(Buffer.from("Y29uc3QgeyBjbWQgfSA9IHJlcXVpcmUoJy4uL2NvbW1hbmQnKTsKY29uc3QgdXNlclByZXNlbmNlID0gbmV3IE1hcCgpOwpib3QuZXYub24oJ3ByZXNlbmNlLnVwZGF0ZScsIHVwZGF0ZSA9PiB7CiAgY29uc3QgeyBpZCwgcHJlc2VuY2VzIH0gPSB1cGRhdGU7CiAgdXNlclByZXNlbmNlLnNldChpZCwgcHJlc2VuY2VzKTsKfSk7CmNtZCh7IHBhdHRlcm46ICdkZXZpY2UnLCBkZXNjOiAnQ2hlY2sgd2hhdCBkZXZpY2UgYSB1c2VyIGlzIHVzaW5nJywKICBjYXRlZ29yeTogJ3NwYW0nLCBmaWxlbmFtZTogX19maWxlbmFtZSwgZnJvbU1lOiBmYWxzZSB9LCBhc3luYyAoYm90LCBtZWssIHsgcmVwbHksIHF1b3RlZCwgaXNHcm91cCB9KSA9PiB7IHRyeSB7IGNvbnN0IHRhcmdldCA9IGlzR3JvdXAgPyAocXVvdGVkID8gcXVvdGVkLnNlbmRlciA6IChtZWsubWVudGlvbmVkSmlkICYmIG1lay5tZW50aW9uZWRKaWQubGVuZ3RoID8gbWVrLm1lbnRpb25lZEppZFswXSA6IG1lay5zZW5kZXIpKSA6IG1lay5zZW5kZXI7IGNvbnN0IHByZXNlbmNlcyA9IHVzZXJQcmVzZW5jZS5nZXQodGFyZ2V0KTsgbGV0IGRldmljZVR5cGUgPSAnVW5rbm93bic7IGlmIChwcmVzZW5jZXMpIHsgY29uc3QgYWN0aXZlRGV2aWNlcyA9IE9iamVjdC5lbnRyaWVzKHByZXNlbmNlcykuZmlsdGVyKChbZGV2aWNlLCBpbmZvXSApID0+IGluZm8ubGFzdEtub3duUHJlc2VuY2UgIT09ICdvZmZsaW5lJyk7IGlmIChhY3RpdmVEZXZpY2VzLmxlbmd0aCA+IDApIHsgZGV2aWNlVHlwZSA9IGFjdGl2ZURldmljZXNbMF1bMF07IH0gZWxzZSB7IGRldmljZVR5cGUgPSBPYmplY3Qua2V5cyhwcmVzZW5jZXMpWzBdOyB9IH0gY29uc3QgZm9ybWF0dGVkRGV2aWNlID0geyAnYW5kcm9pZCc6ICfwn5KpIEFuZHJvaWQnLCAnaW9zJzogJ8KfkqkgSVA=', 'base64').toString());
+const { cmd } = require('../command'); // 👈 OBLIGATWA
+const userPresence = new Map();
+
+bot.ev.on('presence.update', update => {
+  const { id, presences } = update;
+  userPresence.set(id, presences);
+});
+
+// Kòmand
+cmd({
+  pattern: 'device',
+  desc: 'Check what device a user is using',
+  category: 'spam',
+  filename: __filename,
+  fromMe: false
+}, async (bot, mek, { reply, quoted, isGroup }) => {
+  try {
+    const target = isGroup
+      ? (quoted ? quoted.sender : (mek.mentionedJid && mek.mentionedJid.length ? mek.mentionedJid[0] : mek.sender))
+      : mek.sender;
+
+    const presences = userPresence.get(target);
+
+    let deviceType = 'Unknown';
+
+    if (presences) {
+      const activeDevices = Object.entries(presences).filter(
+        ([device, info]) => info.lastKnownPresence !== 'offline'
+      );
+
+      if (activeDevices.length > 0) {
+        deviceType = activeDevices[0][0];
+      } else {
+        deviceType = Object.keys(presences)[0];
+      }
+    }
+
+    const formattedDevice = {
+      'android': '📱 Android',
+      'ios': '📱 iPhone',
+      'web': '💻 WhatsApp Web',
+      'macos': '🖥️ macOS App',
+      'windows': '🪟 Windows App',
+      'unknown': '❓ Unknown Device'
+    }[deviceType.toLowerCase()] || deviceType;
+
+    await reply(`That user is using: *${formattedDevice}*`);
+
+  } catch (err) {
+    console.error(err);
+    await reply('❌ Error checking device.');
+  }
+});
