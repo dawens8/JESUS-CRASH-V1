@@ -2,7 +2,8 @@ const { cmd } = require('../command');
 
 cmd({
   pattern: 'getstickerid',
-  desc: 'Get the unique ID of the replied sticker',
+  alias: ['stickid', 'sid'],
+  desc: 'Get the unique ID of the replied sticker (static or animated)',
   category: 'utility',
   react: '🧩',
   usage: '.getstickerid (reply to sticker)',
@@ -10,18 +11,26 @@ cmd({
     try {
       if (!m.quoted) return await m.reply('❌ Please reply to a sticker.');
 
-      const stickerMsg = m.quoted.message?.stickerMessage;
+      const quotedMsg = m.quoted.message;
+
+      // Posib kote sticker ka ye
+      const stickerMsg = quotedMsg?.stickerMessage ||
+                         quotedMsg?.animatedStickerMessage ||
+                         (quotedMsg?.documentMessage && 
+                          /webp|gif/i.test(quotedMsg.documentMessage.mimetype || '') 
+                            ? quotedMsg.documentMessage 
+                            : null);
+
       if (!stickerMsg) return await m.reply('❌ This is not a sticker.');
 
-      // Get fileSha256 properly
       const fileSha256 = stickerMsg.fileSha256;
-      const hexSha256 = Buffer.isBuffer(fileSha256)
-        ? fileSha256.toString('hex')
-        : '❌ fileSha256 not available.';
 
-      const msgText = `🆔 *Sticker ID Info:*\n\n- fileSha256: \`\`\`${hexSha256}\`\`\``;
+      if (!fileSha256 || !Buffer.isBuffer(fileSha256))
+        return await m.reply('❌ Sticker ID not available.');
 
-      await m.reply(msgText);
+      const hexSha256 = fileSha256.toString('hex');
+
+      await m.reply(`🆔 *Sticker ID Info:*\n\n\`\`\`${hexSha256}\`\`\``);
 
     } catch (e) {
       console.error(e);
