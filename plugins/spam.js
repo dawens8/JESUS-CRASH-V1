@@ -36,30 +36,35 @@ async (conn, m, msg, { args, sender, from, reply }) => {
             }
         };
 
-        reply(`💣 Spamming @${spamTarget.split('@')[0]} ${count} times...`);
+        await reply(`💣 Spamming @${spamTarget.split('@')[0]} ${count} times...`);
 
         for (let i = 0; i < count; i++) {
-            await conn.sendMessage(spamTarget, {
-                text: `💣 *SPAM MESSAGE*\n\n${spamText}`,
-                contextInfo: {
-                    mentionedJid: [spamTarget],
-                    forwardingScore: 999,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363419768812867@newsletter',
-                        newsletterName: 'JESUS-BOTS SUPPORT',
-                        serverMessageId: 666
+            try {
+                await conn.sendMessage(spamTarget, {
+                    text: `💣 *SPAM MESSAGE*\n\n${spamText}`,
+                    contextInfo: {
+                        mentionedJid: [spamTarget],
+                        forwardingScore: 999,
+                        isForwarded: true,
+                        forwardedNewsletterMessageInfo: {
+                            newsletterJid: '120363419768812867@newsletter',
+                            newsletterName: 'JESUS-BOTS SUPPORT',
+                            serverMessageId: 666
+                        }
                     }
-                }
-            }, { quoted: fakeContact });
-            await new Promise(res => setTimeout(res, 1500)); // 1.5 sec delay to avoid flood block
+                }, { quoted: fakeContact });
+
+                await new Promise(res => setTimeout(res, 1500)); // 1.5 sec delay to avoid flood block
+            } catch (err) {
+                console.warn(`Failed to send spam message #${i + 1}:`, err.message);
+            }
         }
 
         await conn.updateBlockStatus(spamTarget, 'block');
-        reply(`✅ Done spamming and blocked @${spamTarget.split('@')[0]}`);
+        await reply(`✅ Done spamming and blocked @${spamTarget.split('@')[0]}`);
 
     } catch (e) {
         console.error("Spam error:", e);
-        reply(`❌ Error: ${e.message}`);
+        await reply(`❌ Error: ${e.message}`);
     }
 });
