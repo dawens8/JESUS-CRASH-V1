@@ -11,7 +11,8 @@ cmd({
 },
 async (conn, m, mdata, { from, sender }) => {
     try {
-        let messages = await conn.fetchMessages?.(from, { limit: 25 }) || [];
+        // ⬇️ Ranplase fetchMessages ak loadMessages pou Baileys v6
+        let messages = await conn.loadMessages(from, 25); 
         let deleted = 0;
         let blocked = new Set();
 
