@@ -4,7 +4,7 @@ const emojis = ['😼', '😫', '😹', '😏', '😍', '🙄', '🤨'];
 
 // 📥 .dame-un-grrr
 cmd({
-  pattern: 'dame-un-grrr',
+  pattern: 'dame un grrr',
   category: 'spam',
   react: '😼',
   desc: 'Reponn ak un que',
