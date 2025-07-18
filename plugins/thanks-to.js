@@ -16,7 +16,7 @@ const thanksCommand = async (m, Matrix) => {
 ┃ 👤 Developer : *© DAWENS BOY*               
 ┃ 📱 Contact   : +13058962443                 
 ┃ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃
-┃ 🤖 Bot       : *MUZAN-X MD*                
+┃ 🤖 Bot       : *JESUS-CRASH-V1*                
 ┃ 🌐 Version   : 1.0.0                        
 ┃ 📅 Updated   : ${new Date().toLocaleDateString()}  
 ┃ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃
@@ -28,7 +28,7 @@ const thanksCommand = async (m, Matrix) => {
     await Matrix.sendMessage(
       m.from,
       {
-        image: { url: "https://files.catbox.moe/e8pgsz.png" },
+        image: { url: "https://files.catbox.moe/fuoqii.png" },
         caption: message,
         contextInfo: {
           mentionedJid: [m.sender],
