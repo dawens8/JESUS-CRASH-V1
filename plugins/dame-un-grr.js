@@ -23,5 +23,5 @@ cmd({
   filename: __filename,
 }, async (conn, m, { reply }) => {
   const emoji = emojis[Math.floor(Math.random() * emojis.length)];
-  await reply(`un que ${emoji}`);
+  await reply(`un que un que ${emoji}`);
 });
