@@ -6,11 +6,18 @@ cmd({
     desc: "Show bot anti-spam policy",
     category: "main",
     filename: __filename,
-    react: "🚫"
+    react: "🚫",
+    admin: true // Only admins can use this command (depends on your cmd handler)
 },
-async (conn, m, msg, { from, sender }) => {
+async (conn, m, msg, { from, sender, isGroup, isAdmin }) => {
     try {
+        // Restrict usage to admins only when in a group
+        if (isGroup && !isAdmin) {
+            return await conn.sendMessage(from, { text: "❌ Only admins can use this command." }, { quoted: m });
+        }
+
         const senderName = m.pushName || 'User';
+        const timeNow = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
 
         const caption = `
 🚫 *ANTI-SPAM POLICY — JESUS-CRASH-V1*
@@ -27,6 +34,8 @@ Our system detects:
 • Mass tagging
 • Repeating commands
 • Long flood texts
+
+🕒 *Policy sent on:* ${timeNow}
 
 Let’s keep *JESUS-CRASH-V1* safe and clean for all 🛡️✨
 
@@ -54,6 +63,15 @@ Let’s keep *JESUS-CRASH-V1* safe and clean for all 🛡️✨
                 mentionedJid: [sender],
                 forwardingScore: 999,
                 isForwarded: true,
+                externalAdReply: {
+                    title: "JESUS-CRASH ANTI-SPAM SYSTEM",
+                    body: "Stay safe with JESUS-BOTS",
+                    thumbnailUrl: 'https://files.catbox.moe/fuoqii.png',
+                    mediaType: 1,
+                    renderLargerThumbnail: true,
+                    showAdAttribution: true,
+                    sourceUrl: "https://github.com/themaster5093/THE-MASTER-MDX-1"
+                },
                 forwardedNewsletterMessageInfo: {
                     newsletterName: 'JESUS-BOTS SUPPORT',
                     newsletterJid: '120363419768812867@newsletter',
