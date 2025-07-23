@@ -1,42 +1,39 @@
 const { cmd } = require('../command');
-const config = require('../config');
 const { getGPTResponse } = require('../lib/gpt');
 
-let chatgptEnabled = false;
+let gptEnabled = false;
 
 cmd({
   pattern: "chatgpt",
+  desc: "Chat ak GPT",
   category: "ai",
-  desc: "Enable/disable ChatGPT and ask questions",
-  use: "<on/off/question>",
+  use: "<on|off|question>",
+  react: "🤖",
   filename: __filename
-}, async (msg, sock, args) => {
-  const sender = msg.key.remoteJid;
-  const input = args.join(' ').trim();
+}, async (m, text, { sock }) => {
+  const lower = text.toLowerCase();
 
-  if (!input) {
-    return await sock.sendMessage(sender, { text: '⚙️ Use `.chatgpt on`, `.chatgpt off`, or `.chatgpt <your question>`' });
+  if (lower === "on") {
+    gptEnabled = true;
+    return m.reply("✅ ChatGPT is now ON");
   }
 
-  if (input.toLowerCase() === 'on') {
-    chatgptEnabled = true;
-    return await sock.sendMessage(sender, { text: '✅ ChatGPT is now *ON*' });
+  if (lower === "off") {
+    gptEnabled = false;
+    return m.reply("❌ ChatGPT is now OFF");
   }
 
-  if (input.toLowerCase() === 'off') {
-    chatgptEnabled = false;
-    return await sock.sendMessage(sender, { text: '❌ ChatGPT is now *OFF*' });
+  if (!gptEnabled) {
+    return m.reply("❗ChatGPT is OFF. Type: `.chatgpt on` to activate.");
   }
 
-  if (!chatgptEnabled) {
-    return await sock.sendMessage(sender, { text: '⚠️ ChatGPT is OFF. Use `.chatgpt on` to turn it on.' });
-  }
+  if (!text) return m.reply("❓Antre yon kesyon apre `.chatgpt`");
 
   try {
-    const reply = await getGPTResponse(input);
-    await sock.sendMessage(sender, { text: reply });
-  } catch (err) {
-    console.error("❌ GPT Error:", err);
-    await sock.sendMessage(sender, { text: '🚫 Error getting ChatGPT response. Try again later.' });
+    const res = await getGPTResponse(text);
+    m.reply(res);
+  } catch (e) {
+    m.reply("❌ Erè pandan repons lan soti. Tcheke API kle ou a.");
+    console.error("GPT Error:", e);
   }
 });
