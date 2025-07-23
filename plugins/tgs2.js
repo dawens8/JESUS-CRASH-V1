@@ -1,2 +1,89 @@
 // Plugin tgs2.js — Convert Telegram animated stickers to 
-const _0x183553=_0x5b4e;(function(_0x27f736,_0x2b58bd){const _0x5c53cc=_0x5b4e,_0x29b573=_0x27f736();while(!![]){try{const _0x44efa0=-parseInt(_0x5c53cc(0x201))/0x1+parseInt(_0x5c53cc(0x214))/0x2+-parseInt(_0x5c53cc(0x20c))/0x3*(-parseInt(_0x5c53cc(0x208))/0x4)+-parseInt(_0x5c53cc(0x1f2))/0x5+parseInt(_0x5c53cc(0x227))/0x6+-parseInt(_0x5c53cc(0x216))/0x7+parseInt(_0x5c53cc(0x1ee))/0x8;if(_0x44efa0===_0x2b58bd)break;else _0x29b573['push'](_0x29b573['shift']());}catch(_0x2ef418){_0x29b573['push'](_0x29b573['shift']());}}}(_0x3041,0xd17ec));function _0x5b4e(_0x115ef5,_0x2f2889){const _0x304185=_0x3041();return _0x5b4e=function(_0x5b4ebc,_0x22da8b){_0x5b4ebc=_0x5b4ebc-0x1ed;let _0x5fecee=_0x304185[_0x5b4ebc];return _0x5fecee;},_0x5b4e(_0x115ef5,_0x2f2889);}function _0x3041(){const _0x2c5265=['569856TOxOSu','resize','9891938cvLGlq','GkgBj','*Length:*\x20','tgsticker','https://api.telegram.org/file/bot7025486524:AAGNJ3lMa8610p7OAIycwLtNmF9vG8GfboM/','unknown','https://files.catbox.moe/06cgye.jpg','join','split','FeQAq','error','xFHyG','animated\x20sticker','length','not\x20animated\x20sticker','rSNfm','wa-sticker-formatter','6809346RNRRtD','>\x20Please\x20wait...','name','DDWbY','#000000','21394520TDRzXC','result','HhXMd','QjVyJ','4959145dOjeMP','Invalid\x20Telegram\x20sticker\x20link.','../config','file_id','*Please\x20provide\x20a\x20Telegram\x20sticker\x20pack\x20link.*\x0a\x0aExample:\x0a.tgs\x20https://t.me/addstickers/telegram','get','YVNrs','GgHZK','*Producer:*\x20','data','wgnwH','PPnmh','yWxBp','inside','SlChC','1232019dKHmJU','Download\x20and\x20convert\x20Telegram\x20sticker\x20packs\x20to\x20WhatsApp\x20stickers','sendMessage','❌\x20An\x20error\x20occurred\x20while\x20processing\x20the\x20sticker\x20pack.\x20Please\x20try\x20again.','HgkMK','https://api.telegram.org/bot7025486524:AAGNJ3lMa8610p7OAIycwLtNmF9vG8GfboM/getStickerSet?name=','amrQs','8EhalIQ','is_animated','webp','stickers','601410nphWuK','Error\x20with\x20sticker\x20#','arraybuffer','toBuffer','file_path','✅\x20Sticker\x20pack\x20download\x20complete!','spam','arXJG'];_0x3041=function(){return _0x2c5265;};return _0x3041();}const axios=require('axios'),sharp=require('sharp'),{Sticker,StickerTypes}=require(_0x183553(0x226)),config=require(_0x183553(0x1f4)),{cmd,commands}=require('../command');cmd({'pattern':'tg','alias':[_0x183553(0x219),'telegramsticker'],'react':'🎴','desc':_0x183553(0x202),'category':_0x183553(0x212),'filename':__filename},async(_0x5270d0,_0x4bc086,_0x51bbb0,{from:_0x4ef2bc,reply:_0x4a01cc,args:_0x549f44,sender:_0x5dac6c,pushname:_0x147c99})=>{const _0x537c57=_0x183553,_0x1f7d92={'QjVyJ':function(_0x448cf2,_0x103772){return _0x448cf2(_0x103772);},'arXJG':_0x537c57(0x1f6),'GgHZK':'/addstickers/','wgnwH':function(_0xac4baf,_0x2d2716){return _0xac4baf(_0x2d2716);},'SlChC':_0x537c57(0x1f3),'XKfFL':_0x537c57(0x222),'GkgBj':function(_0x315bb8,_0x4f8657){return _0x315bb8+_0x4f8657;},'rSNfm':function(_0x4c8c38,_0x57877d){return _0x4c8c38+_0x57877d;},'SzjNv':function(_0x405c6a,_0x4a8fd0){return _0x405c6a<_0x4a8fd0;},'HgkMK':_0x537c57(0x20e),'xFHyG':function(_0x4daf8e,_0xadec7c){return _0x4daf8e(_0xadec7c);},'PPnmh':_0x537c57(0x1ff),'DDWbY':function(_0x497575,_0x19e7da){return _0x497575||_0x19e7da;},'CbGYj':_0x537c57(0x21b),'yWxBp':function(_0x4abb1f,_0x28dac5){return _0x4abb1f+_0x28dac5;},'FeQAq':_0x537c57(0x20d),'amrQs':function(_0x23ffe2,_0x328431){return _0x23ffe2+_0x328431;},'HcWEU':function(_0x51c9ea,_0x439f56){return _0x51c9ea(_0x439f56);},'YVNrs':_0x537c57(0x211),'RsOyB':'Error\x20processing\x20Telegram\x20sticker\x20pack:','HhXMd':function(_0x4eb26f,_0x433f4b){return _0x4eb26f(_0x433f4b);}};try{if(!_0x549f44[0x0]){_0x1f7d92[_0x537c57(0x1f1)](_0x4a01cc,_0x1f7d92[_0x537c57(0x213)]);return;}const _0x3c5484=_0x549f44[_0x537c57(0x21d)]('\x20'),_0x57fddf=_0x3c5484[_0x537c57(0x21e)](_0x1f7d92[_0x537c57(0x1f9)])[0x1];if(!_0x57fddf){_0x1f7d92[_0x537c57(0x1fc)](_0x4a01cc,_0x1f7d92[_0x537c57(0x200)]);return;}const _0x3e1327=_0x537c57(0x206)+encodeURIComponent(_0x57fddf),_0x18fed1=await axios[_0x537c57(0x1f7)](_0x3e1327);let _0x4c579c=_0x18fed1['data'][_0x537c57(0x1ef)][_0x537c57(0x209)]?_0x1f7d92['XKfFL']:_0x537c57(0x224),_0x188040=_0x1f7d92[_0x537c57(0x217)](_0x1f7d92['rSNfm'](_0x1f7d92[_0x537c57(0x225)]('*TELEGRAM\x20STICKER*\x0a\x0a',_0x537c57(0x1fa)+_0x18fed1[_0x537c57(0x1fb)]['result'][_0x537c57(0x229)]+'\x0a')+('*Type:*\x20'+_0x4c579c+'\x0a'),_0x537c57(0x218)+_0x18fed1[_0x537c57(0x1fb)][_0x537c57(0x1ef)][_0x537c57(0x20b)][_0x537c57(0x223)]+'\x0a\x0a'),_0x537c57(0x228));await _0x5270d0[_0x537c57(0x203)](_0x4ef2bc,{'image':{'url':_0x537c57(0x21c)},'caption':_0x188040},{'quoted':_0x4bc086});for(let _0x1d11a6=0x0;_0x1f7d92['SzjNv'](_0x1d11a6,_0x18fed1[_0x537c57(0x1fb)][_0x537c57(0x1ef)]['stickers']['length']);_0x1d11a6++){try{const _0x576f78=await axios['get']('https://api.telegram.org/bot7025486524:AAGNJ3lMa8610p7OAIycwLtNmF9vG8GfboM/getFile?file_id='+_0x18fed1[_0x537c57(0x1fb)][_0x537c57(0x1ef)][_0x537c57(0x20b)][_0x1d11a6][_0x537c57(0x1f5)]),_0x17667d=await _0x1f7d92[_0x537c57(0x1f1)](axios,{'method':'get','url':_0x537c57(0x21a)+_0x576f78[_0x537c57(0x1fb)][_0x537c57(0x1ef)][_0x537c57(0x210)],'responseType':_0x1f7d92[_0x537c57(0x205)]}),_0x2d6441=await _0x1f7d92[_0x537c57(0x221)](sharp,_0x17667d['data'])[_0x537c57(0x215)](0x200,0x200,{'fit':_0x1f7d92[_0x537c57(0x1fd)],'withoutEnlargement':!![]})[_0x537c57(0x20a)]({'quality':0x32})['toBuffer'](),_0x5850c9=new Sticker(_0x2d6441,{'pack':'𝐆𝐎𝐃\x20𝐃𝐀𝐖𝐄𝐍𝐒','author':_0x1f7d92[_0x537c57(0x22a)](_0x147c99,_0x1f7d92['CbGYj']),'type':StickerTypes['FULL'],'quality':0x32,'background':_0x537c57(0x1ed)}),_0x95d62a=await _0x5850c9[_0x537c57(0x20f)]();await _0x5270d0[_0x537c57(0x203)](_0x4ef2bc,{'sticker':_0x95d62a},{'quoted':_0x4bc086}),await new Promise(_0x5d5eb4=>setTimeout(_0x5d5eb4,0x3e8));}catch(_0x599230){console[_0x537c57(0x220)](_0x1f7d92[_0x537c57(0x1fe)](_0x1f7d92[_0x537c57(0x21f)],_0x1f7d92[_0x537c57(0x207)](_0x1d11a6,0x1)),_0x599230);}}_0x1f7d92['HcWEU'](_0x4a01cc,_0x1f7d92[_0x537c57(0x1f8)]);}catch(_0x26c1a3){console[_0x537c57(0x220)](_0x1f7d92['RsOyB'],_0x26c1a3),_0x1f7d92[_0x537c57(0x1f0)](_0x4a01cc,_0x537c57(0x204));}});
+const axios = require('axios');
+const { Sticker, StickerTypes } = require('wa-sticker-formatter');
+const { cmd } = require('../command');
+
+cmd({
+  pattern: 'tgs2',
+  alias: ['tgsticker', 'telegramsticker'],
+  react: '🎴',
+  desc: 'Download Telegram stickers (animated + video)',
+  category: 'fun',
+  filename: __filename
+}, async (conn, mek, m, { from, reply, args, sender, pushname }) => {
+  try {
+    if (!args[0]) {
+      return reply('*Please provide a Telegram sticker pack link.*\n\nExample: `.tgs https://t.me/addstickers/telepack`');
+    }
+
+    const link = args.join(' ');
+    const packName = link.split('/addstickers/')[1];
+
+    if (!packName) return reply('❌ Invalid Telegram sticker pack link.');
+
+    const BOT_TOKEN = '7025486524:AAGNJ3lMa8610p7OAIycwLtNmF9vG8GfboM';
+    const setUrl = `https://api.telegram.org/bot${BOT_TOKEN}/getStickerSet?name=${encodeURIComponent(packName)}`;
+    const packData = await axios.get(setUrl);
+
+    const isAnimated = packData.data.result.is_animated;
+    const stickers = packData.data.result.stickers;
+
+    let introMsg = `*TELEGRAM STICKER PACK*\n\n` +
+                   `*Name:* ${packData.data.result.name}\n` +
+                   `*Animated:* ${isAnimated ? '✅ Yes' : '❌ No'}\n` +
+                   `*Total:* ${stickers.length}\n\n_Processing..._`;
+
+    await conn.sendMessage(from, {
+      image: { url: `https://files.catbox.moe/06cgye.jpg` },
+      caption: introMsg
+    }, { quoted: mek });
+
+    for (let i = 0; i < stickers.length; i++) {
+      const fileId = stickers[i].file_id;
+      const getFileUrl = `https://api.telegram.org/bot${BOT_TOKEN}/getFile?file_id=${fileId}`;
+      const fileInfo = await axios.get(getFileUrl);
+      const filePath = fileInfo.data.result.file_path;
+
+      let stickerBuffer;
+
+      if (isAnimated) {
+        // Download TGS & convert via API
+        const tgsData = await axios.get(`https://api.telegram.org/file/bot${BOT_TOKEN}/${filePath}`, {
+          responseType: 'arraybuffer'
+        });
+
+        const webpRes = await axios.post('https://tgs-to-webp-api.dawensboy.repl.co/convert', tgsData.data, {
+          headers: { 'Content-Type': 'application/octet-stream' },
+          responseType: 'arraybuffer'
+        });
+
+        stickerBuffer = webpRes.data;
+
+      } else {
+        // Normal sticker → convert directly
+        const imageData = await axios.get(`https://api.telegram.org/file/bot${BOT_TOKEN}/${filePath}`, {
+          responseType: 'arraybuffer'
+        });
+
+        const sticker = new Sticker(imageData.data, {
+          pack: 'GOD DAWENS',
+          author: pushname,
+          type: StickerTypes.FULL,
+          categories: ['🌟'],
+          quality: 70
+        });
+
+        stickerBuffer = await sticker.toBuffer();
+      }
+
+      await conn.sendMessage(from, { sticker: stickerBuffer }, { quoted: mek });
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Delay to avoid spam
+    }
+
+    reply('✅ Sticker pack download complete!');
+
+  } catch (err) {
+    console.error('TGS Error:', err);
+    reply('❌ Error processing Telegram sticker pack.');
+  }
+});
