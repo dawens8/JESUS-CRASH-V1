@@ -1,41 +1,19 @@
 const { cmd } = require('../command');
 const { getGPTResponse } = require('../lib/gpt');
 
-let gptEnabled = false;
-
 cmd({
   pattern: "chatgpt",
-  desc: "Chat ak GPT",
+  desc: "Get a response from ChatGPT",
   category: "ai",
-  use: "<on|off|question>",
-  react: "🤖",
+  use: "<your question>",
   filename: __filename
-}, async (m, text, { sock }) => {
-  console.log("TEXT:", text); // Debug
-
-  const lower = text.trim().toLowerCase();
-
-  if (lower === "on") {
-    gptEnabled = true;
-    return await m.reply("✅ ChatGPT mode is now ON");
+}, async (message, match) => {
+  if (!match) {
+    return message.reply("❗ Please enter a question after `.chatgpt`");
   }
 
-  if (lower === "off") {
-    gptEnabled = false;
-    return await m.reply("❌ ChatGPT mode is now OFF");
-  }
+  await message.react("🤖");
 
-  if (!gptEnabled) {
-    return await m.reply("❗ChatGPT is OFF. Use `.chatgpt on` to turn it on.");
-  }
-
-  if (!text) return await m.reply("❓ Antre yon kesyon apre `.chatgpt`");
-
-  try {
-    const response = await getGPTResponse(text);
-    await m.reply("🤖 " + response);
-  } catch (err) {
-    console.error("GPT ERROR:", err);
-    await m.reply("❌ Erè pandan repons lan sòti. Verifye kle OpenAI ou a.");
-  }
+  const reply = await getGPTResponse(match);
+  return message.reply(reply);
 });
