@@ -1,5 +1,6 @@
 // Plugin tgs2.js — Convert Telegram animated stickers to 
 const axios = require('axios');
+const sharp = require('sharp');
 const { Sticker, StickerTypes } = require('wa-sticker-formatter');
 const { cmd } = require('../command');
 
@@ -7,83 +8,70 @@ cmd({
   pattern: 'tgs2',
   alias: ['tgsticker', 'telegramsticker'],
   react: '🎴',
-  desc: 'Download Telegram stickers (animated + video)',
-  category: 'fun',
+  desc: 'Download and convert Telegram sticker packs to WhatsApp stickers',
+  category: 'main',
   filename: __filename
-}, async (conn, mek, m, { from, reply, args, sender, pushname }) => {
+}, async (conn, mek, m, { from, reply, args, pushname }) => {
   try {
     if (!args[0]) {
-      return reply('*Please provide a Telegram sticker pack link.*\n\nExample: `.tgs https://t.me/addstickers/telepack`');
+      return reply('*Please provide a Telegram sticker pack link.*\n\nExample: `.tgs https://t.me/addstickers/<pack>`');
     }
 
-    const link = args.join(' ');
-    const packName = link.split('/addstickers/')[1];
+    const lien = args.join(' ');
+    const name = lien.split('/addstickers/')[1];
 
-    if (!packName) return reply('❌ Invalid Telegram sticker pack link.');
+    if (!name) return reply('❌ Invalid Telegram sticker link.');
 
-    const BOT_TOKEN = '7025486524:AAGNJ3lMa8610p7OAIycwLtNmF9vG8GfboM';
-    const setUrl = `https://api.telegram.org/bot${BOT_TOKEN}/getStickerSet?name=${encodeURIComponent(packName)}`;
-    const packData = await axios.get(setUrl);
+    const API_KEY = '7025486524:AAGNJ3lMa8610p7OAIycwLtNmF9vG8GfboM';
+    const apiURL = `https://api.telegram.org/bot${API_KEY}/getStickerSet?name=${encodeURIComponent(name)}`;
+    const stickers = await axios.get(apiURL);
 
-    const isAnimated = packData.data.result.is_animated;
-    const stickers = packData.data.result.stickers;
-
-    let introMsg = `*TELEGRAM STICKER PACK*\n\n` +
-                   `*Name:* ${packData.data.result.name}\n` +
-                   `*Animated:* ${isAnimated ? '✅ Yes' : '❌ No'}\n` +
-                   `*Total:* ${stickers.length}\n\n_Processing..._`;
+    const type = stickers.data.result.is_animated ? 'Animated' : 'Static';
+    const total = stickers.data.result.stickers.length;
 
     await conn.sendMessage(from, {
       image: { url: `https://files.catbox.moe/06cgye.jpg` },
-      caption: introMsg
+      caption: `*Telegram Sticker*\n\n*Pack:* ${stickers.data.result.name}\n*Type:* ${type}\n*Stickers:* ${total}\n\n⏳ Please wait...`,
     }, { quoted: mek });
 
-    for (let i = 0; i < stickers.length; i++) {
-      const fileId = stickers[i].file_id;
-      const getFileUrl = `https://api.telegram.org/bot${BOT_TOKEN}/getFile?file_id=${fileId}`;
-      const fileInfo = await axios.get(getFileUrl);
+    for (let i = 0; i < total; i++) {
+      const fileId = stickers.data.result.stickers[i].file_id;
+
+      // Get File Path
+      const fileInfo = await axios.get(`https://api.telegram.org/bot${API_KEY}/getFile?file_id=${fileId}`);
       const filePath = fileInfo.data.result.file_path;
 
-      let stickerBuffer;
+      // Download File
+      const res = await axios.get(`https://api.telegram.org/file/bot${API_KEY}/${filePath}`, {
+        responseType: 'arraybuffer'
+      });
 
-      if (isAnimated) {
-        // Download TGS & convert via API
-        const tgsData = await axios.get(`https://api.telegram.org/file/bot${BOT_TOKEN}/${filePath}`, {
-          responseType: 'arraybuffer'
-        });
+      // Optimize with sharp
+      const optimized = await sharp(res.data)
+        .resize(512, 512, { fit: 'inside' }) // Fit inside 512x512
+        .webp({ quality: 45 }) // Reduce quality for size
+        .toBuffer();
 
-        const webpRes = await axios.post('https://tgs-to-webp-api.dawensboy.repl.co/convert', tgsData.data, {
-          headers: { 'Content-Type': 'application/octet-stream' },
-          responseType: 'arraybuffer'
-        });
+      // Create Sticker
+      const sticker = new Sticker(optimized, {
+        pack: 'GOD DA',
+        author: pushname,
+        type: StickerTypes.FULL,
+        quality: 45,
+        categories: ['🌟'],
+        background: '#000000',
+      });
 
-        stickerBuffer = webpRes.data;
-
-      } else {
-        // Normal sticker → convert directly
-        const imageData = await axios.get(`https://api.telegram.org/file/bot${BOT_TOKEN}/${filePath}`, {
-          responseType: 'arraybuffer'
-        });
-
-        const sticker = new Sticker(imageData.data, {
-          pack: 'GOD DAWENS',
-          author: pushname,
-          type: StickerTypes.FULL,
-          categories: ['🌟'],
-          quality: 70
-        });
-
-        stickerBuffer = await sticker.toBuffer();
-      }
+      const stickerBuffer = await sticker.toBuffer();
 
       await conn.sendMessage(from, { sticker: stickerBuffer }, { quoted: mek });
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Delay to avoid spam
+
+      await new Promise(resolve => setTimeout(resolve, 1200)); // Rate limit avoid
     }
 
-    reply('✅ Sticker pack download complete!');
-
-  } catch (err) {
-    console.error('TGS Error:', err);
-    reply('❌ Error processing Telegram sticker pack.');
+    reply('✅ Sticker pack conversion complete!');
+  } catch (error) {
+    console.error('Telegram sticker error:', error);
+    reply('❌ Failed to process sticker pack. Try another one or later.');
   }
 });
