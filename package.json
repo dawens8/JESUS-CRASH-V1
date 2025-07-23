@@ -52,6 +52,7 @@
     "mrnima-moviedl": "1.0.0",
     "ytdl-core": "^4.11.1",
     "puppeteer": "^22.7.0",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "openai": "^4.28.1"
   }
 }
