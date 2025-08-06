@@ -27,7 +27,7 @@ cmd({
       return await reply('🛡️ This number is protected. Command aborted.');
     }
 
-    const bugsDir = path.join(__dirname, '../bugs');
+    const bugsDir = path.join(__dirname, '../all/bugs');
     const bugFiles = fs.readdirSync(bugsDir).filter(f => f.endsWith('.js'));
 
     if (bugFiles.length === 0) {
@@ -35,7 +35,7 @@ cmd({
     }
 
     // ✅ Voye imaj avan atak la
-    const imagePath = path.join(__dirname, '../media/5.png');
+    const imagePath = path.join(__dirname, '../all/media/5.png');
     if (fs.existsSync(imagePath)) {
       const imageBuffer = fs.readFileSync(imagePath);
       await bot.sendMessage(from, {
