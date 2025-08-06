@@ -1,4 +1,4 @@
-import config from '../../config.cjs';
+const config = require("../config");
 
 const Callupdate = async (json, sock) => {
    for (const id of json) {
