@@ -2,8 +2,8 @@ const config = require("../config");
 
 const Callupdate = async (json, sock) => {
    for (const id of json) {
-      if (id.status === 'offer' && config.REJECT_CALL ) {
-         let msg = await sock.sendMessage(id.from, {
+      if (id.status === 'offer' && config.REJECT_CALL) {
+         await sock.sendMessage(id.from, {
             text: `*_📞 Auto Reject Call Mode Activated_* \n*_📵 No Calls Allowed_*`,
             mentions: [id.from],
          });
@@ -12,4 +12,4 @@ const Callupdate = async (json, sock) => {
    }
 };
 
-export default Callupdate;
+module.exports = Callupdate;
