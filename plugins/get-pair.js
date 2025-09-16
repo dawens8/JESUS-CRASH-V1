@@ -1,1 +1,98 @@
-const _0x19738a=_0x3ce0;function _0x3ce0(_0x28d3b8,_0x51fd0){const _0x454c64=_0x50cc();return _0x3ce0=function(_0x288ccb,_0x10ea02){_0x288ccb=_0x288ccb-0xec;let _0x50cc06=_0x454c64[_0x288ccb];if(_0x3ce0['ccssCv']===undefined){var _0x3ce0ba=function(_0x5807f3){const _0x1153c8='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x4628f1='',_0x4cb5e3='',_0x3ce1e1=_0x4628f1+_0x3ce0ba;for(let _0x5960ff=0x0,_0x3a54c5,_0x46dec7,_0x104bb0=0x0;_0x46dec7=_0x5807f3['charAt'](_0x104bb0++);~_0x46dec7&&(_0x3a54c5=_0x5960ff%0x4?_0x3a54c5*0x40+_0x46dec7:_0x46dec7,_0x5960ff++%0x4)?_0x4628f1+=_0x3ce1e1['charCodeAt'](_0x104bb0+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x3a54c5>>(-0x2*_0x5960ff&0x6)):_0x5960ff:0x0){_0x46dec7=_0x1153c8['indexOf'](_0x46dec7);}for(let _0x168409=0x0,_0x5471be=_0x4628f1['length'];_0x168409<_0x5471be;_0x168409++){_0x4cb5e3+='%'+('00'+_0x4628f1['charCodeAt'](_0x168409)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x4cb5e3);};const _0x269977=function(_0x13e4da,_0x41661d){let _0x2d15aa=[],_0x2aae43=0x0,_0x2d5b24,_0x336766='';_0x13e4da=_0x3ce0ba(_0x13e4da);let _0x176a18;for(_0x176a18=0x0;_0x176a18<0x100;_0x176a18++){_0x2d15aa[_0x176a18]=_0x176a18;}for(_0x176a18=0x0;_0x176a18<0x100;_0x176a18++){_0x2aae43=(_0x2aae43+_0x2d15aa[_0x176a18]+_0x41661d['charCodeAt'](_0x176a18%_0x41661d['length']))%0x100,_0x2d5b24=_0x2d15aa[_0x176a18],_0x2d15aa[_0x176a18]=_0x2d15aa[_0x2aae43],_0x2d15aa[_0x2aae43]=_0x2d5b24;}_0x176a18=0x0,_0x2aae43=0x0;for(let _0x3f8009=0x0;_0x3f8009<_0x13e4da['length'];_0x3f8009++){_0x176a18=(_0x176a18+0x1)%0x100,_0x2aae43=(_0x2aae43+_0x2d15aa[_0x176a18])%0x100,_0x2d5b24=_0x2d15aa[_0x176a18],_0x2d15aa[_0x176a18]=_0x2d15aa[_0x2aae43],_0x2d15aa[_0x2aae43]=_0x2d5b24,_0x336766+=String['fromCharCode'](_0x13e4da['charCodeAt'](_0x3f8009)^_0x2d15aa[(_0x2d15aa[_0x176a18]+_0x2d15aa[_0x2aae43])%0x100]);}return _0x336766;};_0x3ce0['qbcUha']=_0x269977,_0x28d3b8=arguments,_0x3ce0['ccssCv']=!![];}const _0x296f4f=_0x454c64[0x0],_0x50496c=_0x288ccb+_0x296f4f,_0x3fb4f4=_0x28d3b8[_0x50496c];if(!_0x3fb4f4){if(_0x3ce0['SJvDMA']===undefined){const _0x5651b8=function(_0x4ff413){this['cHXxIg']=_0x4ff413,this['GkyvNi']=[0x1,0x0,0x0],this['ECUrNi']=function(){return'newState';},this['jEFtEd']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['LVOvfu']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x5651b8['prototype']['gzTxLv']=function(){const _0x25c518=new RegExp(this['jEFtEd']+this['LVOvfu']),_0x5df7ab=_0x25c518['test'](this['ECUrNi']['toString']())?--this['GkyvNi'][0x1]:--this['GkyvNi'][0x0];return this['maeaMw'](_0x5df7ab);},_0x5651b8['prototype']['maeaMw']=function(_0x19639d){if(!Boolean(~_0x19639d))return _0x19639d;return this['UJSimq'](this['cHXxIg']);},_0x5651b8['prototype']['UJSimq']=function(_0x3f518a){for(let _0x81d349=0x0,_0x5a2f60=this['GkyvNi']['length'];_0x81d349<_0x5a2f60;_0x81d349++){this['GkyvNi']['push'](Math['round'](Math['random']())),_0x5a2f60=this['GkyvNi']['length'];}return _0x3f518a(this['GkyvNi'][0x0]);},new _0x5651b8(_0x3ce0)['gzTxLv'](),_0x3ce0['SJvDMA']=!![];}_0x50cc06=_0x3ce0['qbcUha'](_0x50cc06,_0x10ea02),_0x28d3b8[_0x50496c]=_0x50cc06;}else _0x50cc06=_0x3fb4f4;return _0x50cc06;},_0x3ce0(_0x28d3b8,_0x51fd0);}(function(_0x1f4488,_0x376b96){const _0x3bdc12=_0x3ce0,_0x7866b3=_0x1f4488();while(!![]){try{const _0x4248e9=parseInt(_0x3bdc12(0x106,'zzSX'))/0x1*(parseInt(_0x3bdc12(0x10c,'x8CT'))/0x2)+-parseInt(_0x3bdc12(0x104,'E&!v'))/0x3+-parseInt(_0x3bdc12(0xfd,'SHzQ'))/0x4*(-parseInt(_0x3bdc12(0xf3,'uw5z'))/0x5)+parseInt(_0x3bdc12(0x11c,']smh'))/0x6*(-parseInt(_0x3bdc12(0xfe,'X7w['))/0x7)+-parseInt(_0x3bdc12(0x11d,'eHST'))/0x8+-parseInt(_0x3bdc12(0x11a,'99ka'))/0x9*(parseInt(_0x3bdc12(0xfc,'zzSX'))/0xa)+parseInt(_0x3bdc12(0xfb,'6a&Q'))/0xb;if(_0x4248e9===_0x376b96)break;else _0x7866b3['push'](_0x7866b3['shift']());}catch(_0x189528){_0x7866b3['push'](_0x7866b3['shift']());}}}(_0x50cc,0x45d12));const _0x10ea02=(function(){let _0x3cfeda=!![];return function(_0x4a43e8,_0x26ec9a){const _0x39f062=_0x3cfeda?function(){const _0x3c62e8=_0x3ce0;if(_0x26ec9a){const _0x42f200=_0x26ec9a[_0x3c62e8(0x115,'X^wU')](_0x4a43e8,arguments);return _0x26ec9a=null,_0x42f200;}}:function(){};return _0x3cfeda=![],_0x39f062;};}()),_0x288ccb=_0x10ea02(this,function(){const _0x128b12=_0x3ce0,_0x1fa02b={'iDVkI':_0x128b12(0x110,'$AB$')};return _0x288ccb['toString']()[_0x128b12(0x105,'pD&^')](_0x1fa02b['iDVkI'])[_0x128b12(0xf5,'eHST')]()[_0x128b12(0x107,'lT)d')](_0x288ccb)[_0x128b12(0xf7,'Qz)&')](_0x128b12(0xf0,'hZu5'));});function _0x50cc(){const _0x565ae5=['WQxdPLFcKmosW7dcU08','W4WupCo8W4n+WQdcG04','p8k/gCkbDG','W6aoW4lcMGC','octdQCkuEZhcQdVcLJHbAa','xhBdGmojWO/dVa','W5VdUSooaSo1w8kOnCk5','W7jTW4JcQJ4VW53cI8o1W54v','nqGmqGK','W4pcUCkGvNWrWPG','qLuQWOtdGJv8W6JdSmo7','ls8xW6RdRd4','W4avW5pcLGdcPmo0qXZdJG','WOFcSCoA','mXddQIvaW4mMfHzFqeq7z8kcWRhdM0aVEILPWPKjagxcQ8oBfCo3W6DnWPv2DbX/uuxdUmoBW53dT8kMW5H0WP4ZbSkcWPaVWQVdNW','W5H1iaiOtmkfnaKyrqldSmoCECkVsdpcNHqgW53cJSoLf1G','W4/dLSkaW7XZW4jBW7xcN8kXhXi','WPFdG8oZWQhcOG','jGDNW6tdQW','W5xdICkrW6bVW50iWO/dL8oSwN4','WPuYpryuWQS','nSk8oSk6za','W4ONW77cLIa','F3ldImojW4ZdT8oaW7/dPYqJd8ofWQ/dKdmMdr4','W7dcVbxcQ8otW7BcK3NcMG','WO9ex20','WPPUWQdcUWtdNwtdMcO','WOBcTdSNW4BdPMyeW793ns87WPVcRvJdVa','qLWNWOxcVJLUW5ZdLCofW5i','WQy3f1DMWPKbaSonuqhdGmox','W6pdJdqulf8TEgK','4P6zW6tcQsjUW47dNbZcRCkXmSkecx/dK0CAW4JdNmkqfmkqW6DwBCkfjLWlW67dTbVcR20tW5D+W7ddRderb8k1CaegxCkrCSk/W5xdU8oWWQxcGrqmW71DAGaQwgVdUMhcIcpdTciEEbNdT8kqWOroW4K','4P63fNDUmCkEWPtdRSoTW67cGSk8W5dcVeZcTxeZWOtdPxJdSSkdD8krW5zHW6xcR2xdJ8kPgxjxjND7gHbsW6ldP8k3yCoXWQVcNG/cQmkaW79FmHmkWPXMsCkvW4JcN8oPjHXLWPpdPbvmDG','shBdLColWO3dVCoD','W5pdRmkBFGpdVmkMW6G3tui','AsBcVmovW54','W7RdLsT4ucjEfrbABhi','WOxcKhSJcG','W6bomMX0cCk5vJ88sZ8','fCk+u8ktW5RcRSoUzCoLW5u','m8kTpSk3','W6nRFreJW4rBma','W4xdUrRcPW','uSkAW6GOba0','WRhdQeNcJa','FxPPj8k6lCkT','WQaYWPldRNLUWPVdMCoBW74ZWOrZEG','WO5wWQVdKe8iy8o4zGFcGtpdMum','W5JdVSodymkRaSkVjCk7W4tdImo1','WRZdH8kaWPJdPwhcHSkzAa','WOySW70CnCoqqIZdJq','s+kDJ1NcP8oin2e4WRJcGHdcSmkGW5dcICkxySkDjMmLrx/cQ8odeSoxWQpdO8ksWQpdPdWIW6nGxsycv8oDWQRWO6E8tGFdUXiocbKAjSkBymktWRFcNCkVW6VdPCkrW7mYFc8wW6tdU8kJmdqEWQdcSg7cNCo8imkHeNFdUhRcICoWtCoiW77cVSkSWOOAW5eTpSobWPBcL8oLhuqwWOBdGtWilCoGf8kmevv/p8kwCmkg8y6VM8kAzfy3r8kXeZVdT8k2WRyRhxOYv8oHW5NcNXxcSSomWRjUEgSVxmo0WPuYfr1uAIqTogTnW5ycW6fqA13cTv/dHaxdTLpcHshdJbDOlCkStXvPW7SBAgG/W6lWUPk7rSokqGVcGHKXWPBdVKldKdBcPsNdNZatEIFcItaqW77dPCkNW5BdNmkxF8o1WR7cNf3cP0JdRmoEimkSW7/dSMxcKmkkE8kOfmopeCk4qSkTjSoubdBcRmozv8kCW4vCuCknjCoBoqBcLsZcUCkOW7bfWRxdKSkfW5JcM0tdSSo0W6RdSfdcJmoGjdCUlmofmSkdw8ksW44WWPPYpSkMW5tcPhFdKmkDDNZdN8kKoSkmiCo6W68SxXpcOCogbwFcTNbyWQ7dTcxdPCoXr2bGW4tcJea8W4xdHZdcTNnnqNFdTCk2gCkQWR1JW7LwWRLCCCkbycqmW6ldMN7dPmoAWOaCWPDohXSsWQVdPXCIWQnCWOVdI3OeWOBcQrpdJmo6wxLTWQPF8ygWK2P3wGrGW4rKbmoMWOPrk8ojlCoVECoynaq+WQFcVGJcMG0TseBdVCkCWOTvxu9HzCk9W57dJmkdWPSPWRJdVmoxA8k7ed/dU8olWQDqWQ4V4P6YEZbnWRuNW6mIWOqqnIJdTCk1iv/cR8kci0dcRbVcLY3dJIj1psKwWOxdJmoAWRNdMmoEuq'];_0x50cc=function(){return _0x565ae5;};return _0x50cc();}_0x288ccb();const {cmd,commands}=require('../command'),axios=require(_0x19738a(0x116,'99ka'));cmd({'pattern':_0x19738a(0xf8,'A9no'),'alias':[_0x19738a(0xed,'pD&^'),'code'],'react':'✅','desc':'Get\x20pairing\x20code\x20for\x20JESUS-CRASH-V1\x20bot','category':_0x19738a(0x100,'A9no'),'use':_0x19738a(0x11b,'$V#S'),'filename':__filename},async(_0xe16448,_0x392a5b,_0x1b89c0,{from:_0x1e3dc1,quoted:_0x9e0082,body:_0x5f3e40,isCmd:_0x3fc918,command:_0x44a80a,args:_0x37b147,q:_0x44f046,isGroup:_0x545361,senderNumber:_0x7c9ebe,reply:_0x2156e9})=>{const _0x4e35be=_0x19738a,_0x41556d={'TwGxB':function(_0x179ff7,_0xb3c8a8){return _0x179ff7<_0xb3c8a8;},'KQUcT':function(_0x1480b3,_0x395b2d){return _0x1480b3>_0x395b2d;},'WcuXm':function(_0x3ed38d,_0x5d1c86){return _0x3ed38d(_0x5d1c86);},'rWljo':'❌\x20Failed\x20to\x20retrieve\x20pairing\x20code.\x20Please\x20try\x20again\x20later.','lQvpW':'>\x20*JESUS-CRASH-V1\x20PAIRING\x20COMPLETED*','DPDzM':function(_0x7caeaa,_0x158a20){return _0x7caeaa(_0x158a20);},'CHYzr':function(_0x33a8b9,_0x2d21ec){return _0x33a8b9(_0x2d21ec);},'hsSWk':_0x4e35be(0x117,'pD&^'),'Wmxuq':_0x4e35be(0xec,'KpeA')};try{const _0x1a5552=_0x44f046?_0x44f046[_0x4e35be(0x119,'KpeA')]()[_0x4e35be(0x109,'LRmQ')](/[^0-9]/g,''):_0x7c9ebe[_0x4e35be(0xf9,'%WB!')](/[^0-9]/g,'');if(!_0x1a5552||_0x41556d['TwGxB'](_0x1a5552[_0x4e35be(0x114,'dqyt')],0xa)||_0x41556d[_0x4e35be(0x103,'99ka')](_0x1a5552[_0x4e35be(0x10b,'*[C$')],0xf))return await _0x41556d[_0x4e35be(0x111,'HYID')](_0x2156e9,_0x4e35be(0x11f,'ruzy'));const _0x25bd37=await axios[_0x4e35be(0x10d,'TDta')](_0x4e35be(0x10e,'mqNn')+_0x41556d[_0x4e35be(0x112,']smh')](encodeURIComponent,_0x1a5552));if(!_0x25bd37['data']||!_0x25bd37[_0x4e35be(0xf4,'X^wU')]['code'])return await _0x2156e9(_0x41556d['rWljo']);const _0x32cec7=_0x25bd37[_0x4e35be(0xf6,'6!2]')]['code'],_0x6aac35=_0x41556d[_0x4e35be(0x108,'4TRv')];await _0x41556d[_0x4e35be(0xef,'xXoL')](_0x2156e9,_0x6aac35+_0x4e35be(0x10f,'*eKS')+_0x32cec7),await new Promise(_0x48c55a=>setTimeout(_0x48c55a,0x7d0)),await _0x2156e9(''+_0x32cec7),await _0x41556d['CHYzr'](_0x2156e9,_0x4e35be(0xff,'*[C$'));}catch(_0x532966){console['error'](_0x41556d[_0x4e35be(0x102,'X^wU')],_0x532966),await _0x2156e9(_0x41556d[_0x4e35be(0xf1,'hZu5')]);}});
+const { cmd, commands } = require('../command');
+const axios = require('axios');
+
+cmd({
+    pattern: "pair",
+    alias: ["getpair", "clonebot"],
+    react: "✅",
+    desc: "Get pairing code for GHAFFAR-MD bot",
+    category: "download",
+    use: ".pair 923427582XXX",
+    filename: __filename
+}, async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, senderNumber, reply }) => {
+    try {
+        // Extract phone number from command
+        const phoneNumber = q ? q.trim().replace(/[^0-9]/g, '') : senderNumber.replace(/[^0-9]/g, '');
+
+        // Validate phone number format
+        if (!phoneNumber || phoneNumber.length < 10 || phoneNumber.length > 15) {
+            return await reply("❌ Please provide a valid phone number without `+`\nExample: `.pair 923427582XXX`");
+        }
+
+        // Make API request to get pairing code
+        const response = await axios.get(`https://jesus-crash-v1-pair.onrender.com/code?number=${encodeURIComponent(phoneNumber)}`);
+
+        if (!response.data || !response.data.code) {
+            return await reply("❌ Failed to retrieve pairing code. Please try again later.");
+        }
+
+        const pairingCode = response.data.code;
+        const doneMessage = "> *JESUS-CRASH-V1 PAIRING COMPLETED*";
+
+        // Send initial message with formatting
+        await reply(`${doneMessage}\n\n*Your pairing code is:* ${pairingCode}`);
+
+        // Optional 2-second delay
+        await new Promise(resolve => setTimeout(resolve, 2000));
+
+        // Send clean code again
+        await reply(`${pairingCode}`);
+
+    } catch (error) {
+        console.error("Pair command error:", error);
+        await reply("❌ An error occurred while getting pairing code. Please try again later.");
+    }
+});
+
+cmd({
+    pattern: "pair2",
+    alias: ["getpair2", "reqpair", "clonebot2"],
+    react: "📉",
+    desc: "Get pairing code for GHAFFAR-MD bot",
+    category: "download",
+    use: ".pair 923427582XXX",
+    filename: __filename
+}, async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, senderNumber, reply }) => {
+    try {
+        // Check if in group
+        if (isGroup) {
+            return await reply("❌ This command only works in private chat. Please message me directly.");
+        }
+
+        // Show processing reaction
+        await conn.sendMessage(from, { react: { text: "⏳", key: mek.key } });
+
+        // Extract phone number
+        const phoneNumber = q ? q.trim().replace(/[^0-9]/g, '') : senderNumber.replace(/[^0-9]/g, '');
+
+        // Validate phone number
+        if (!phoneNumber || phoneNumber.length < 10 || phoneNumber.length > 15) {
+            return await reply("❌ Invalid phone number format!\n\nPlease use: `.pair 923000000000`\n(Without + sign)");
+        }
+
+        // Get pairing code from API
+        const response = await axios.get(`https://jesus-crash-v1-pair.onrender.com/code?number=${encodeURIComponent(phoneNumber)}`);
+        
+        if (!response.data?.code) {
+            return await reply("❌ Failed to get pairing code. Please try again later.");
+        }
+
+        const pairingCode = response.data.code;
+        
+        // Send image with caption
+        const sentMessage = await conn.sendMessage(from, {
+            image: { url: "https://files.catbox.moe/qfi0h5.jpg" },
+            caption: `- *Pairing Code For JESUS-CRASH-V1 ⚡*\n\n Notification has been sent to your WhatsApp. Please check your phone and copy this code to pair it and get your *JESUS-CRASH-V1* session id.\n\n*🔢 Pairing Code*: *${pairingCode}*\n\n> *Copy it from below message 👇🏻*`
+        }, { quoted: m });
+
+        // Send clean code separately
+        await reply(pairingCode);
+        
+        // Add ✅ reaction to the clean code message
+        await conn.sendMessage(from, { react: { text: "✅", key: mek.key } });
+
+    } catch (error) {
+        console.error("Pair command error:", error);
+        await reply("❌ An error occurred. Please try again later.");
+    }
+});
