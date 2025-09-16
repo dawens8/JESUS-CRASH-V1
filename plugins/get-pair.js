@@ -5,7 +5,7 @@ cmd({
     pattern: "pair",
     alias: ["getpair", "clonebot"],
     react: "✅",
-    desc: "Get pairing code for GHAFFAR-MD bot",
+    desc: "Get pairing code for JESUS-CRASH-V1 bot",
     category: "download",
     use: ".pair 923427582XXX",
     filename: __filename
