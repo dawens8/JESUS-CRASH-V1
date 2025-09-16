@@ -31,7 +31,7 @@ cmd({
   try {
     const botName = config.BOT_NAME || 'JESUS-CRASH-V1';
     const ownerName = config.OWNER_NAME || '𝐃𝐀𝐖𝐄𝐍𝐒 𝐁𝐎𝐘';
-    const menuImage = config.MENU_IMAGE_URL || 'https://files.catbox.moe/z4do8f.jpeg';
+    const menuImage = config.MENU_IMAGE_URL || 'https://files.catbox.moe/qq8b03.png';
     const userName = pushname || 'User';
     const prefix = config.PREFIX || '.';
     const mode = config.MODE || 'default';
